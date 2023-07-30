@@ -1,0 +1,7 @@
+.idea
+log
+input
+output
+settings
+config/*
+!config/default

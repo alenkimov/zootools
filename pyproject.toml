@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "zootools"
+version = "0.1.0"
+description = ""
+authors = ["Alen <alen.kimov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+better-web3 = "1.5.2"
+loguru = "^0.7.0"
+questionary = "^1.10.0"
+pyuseragents = "^1.0.5"
+tqdm = "^4.65.0"
+pandas = "^2.0.3"
+pydantic = "^2.1.1"
+python3-aioanticaptcha = "^1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
