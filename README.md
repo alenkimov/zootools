@@ -1,6 +1,5 @@
 # zootools.co forms script
 [ [Telegram канал](https://t.me/cum_insider) ]
-🍩 Donate `0xC0DE29c8e4ba19Df054f703916362Bf4BFd77f27`
 
 - [Запуск под Windows](#Запуск-под-Windows)
 - [Запуск под Ubuntu](#Запуск-под-Ubuntu)
@@ -86,6 +85,3 @@ poetry run python start.py
 что ссылается на форму [reveel](https://form.zootools.co/go/bLFJhrGfkOoEQgt3I3LR)
 
 При запуске скрипт спросит инвайт код и количество рефералов, которое нужно накрутить.
-
-## Credits
-[MsLolita](https://github.com/MsLolita) / [AutoZooTools](https://github.com/MsLolita/AutoZooTools)
