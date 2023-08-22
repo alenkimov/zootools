@@ -1,6 +1,5 @@
 # zootools.co forms script
-[ [Telegram канал](https://t.me/cum_insider) ]
-🍩 Donate `0xC0DE29c8e4ba19Df054f703916362Bf4BFd77f27`
+[![Telegram channel](https://img.shields.io/endpoint?url=https://runkit.io/damiankrawczyk/telegram-badge/branches/master?url=https://t.me/cum_insider)](https://t.me/cum_insider)
 
 - [Запуск под Windows](#Запуск-под-Windows)
 - [Запуск под Ubuntu](#Запуск-под-Ubuntu)
