@@ -1,6 +1,9 @@
 import asyncio
 from typing import Iterable
 
+from aiohttp import ContentTypeError
+from tqdm.asyncio import tqdm
+
 from bot.zootools import ZooToolsAPI, ZooToolsAccount
 from bot.anticaptcha import TurnstileProxyless
 from bot.config import CONFIG
@@ -24,16 +27,20 @@ async def register_zootools_account(account: ZooToolsAccount, invite_code: str):
             logger.debug(f"{account} Captcha token: {g_response}")
 
     async with ZooToolsAPI() as zootools:
-        data = await zootools.enter_raffle(
-            CONFIG.FORM_ID,
-            invite_code,
-            account.email,
-            account.wallet.address,
-            g_response,
-            proxy=account.proxy,
-        )
-        logger.debug(f"{account} {data}")
-        logger.success(f"{account} Invited!")
+        try:
+            data = await zootools.enter_raffle(
+                CONFIG.FORM_ID,
+                invite_code,
+                account.email,
+                account.wallet.address,
+                g_response,
+                proxy=account.proxy,
+            )
+            logger.debug(f"{account} {data}")
+            logger.success(f"{account} Invited!")
+        except ContentTypeError as e:
+            logger.error(f"{account} Вместо JSON ответ пришел в TEXT/HTML")
+            return
 
 
 async def _generate_accounts_and_process_for_proxy(
@@ -63,7 +70,7 @@ async def _register_accounts(invite_code: str, number_of_accounts: int, proxies:
         task = _generate_accounts_and_process_for_proxy(proxy, invite_code, accounts_count)
         tasks.append(task)
 
-    await asyncio.gather(*tasks)
+    await tqdm.gather(*tasks)
 
 
 def register_accounts(invite_code: str, number_of_accounts: int):

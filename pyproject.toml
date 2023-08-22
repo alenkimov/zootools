@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "zootools"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Alen <alen.kimov@gmail.com>"]
 readme = "README.md"
@@ -12,7 +12,6 @@ loguru = "^0.7.0"
 questionary = "^1.10.0"
 pyuseragents = "^1.0.5"
 tqdm = "^4.65.0"
-pandas = "^2.0.3"
 pydantic = "^2.1.1"
 python3-aioanticaptcha = "^1.2"
 
